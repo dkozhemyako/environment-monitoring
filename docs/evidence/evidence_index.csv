@@ -1,0 +1,35 @@
+﻿number,path,title,notes,group
+01,docs/diagrams/01_er_database_schema.png,ER-діаграма 9 таблиць,"Повна схема зв’язків бази даних, експортована як скриншот Supabase.",main
+02,docs/evidence/02_current_sensor_state.png,Поточний стан датчиків,"4 канали та значення, статус NORMAL.",main
+03,docs/evidence/03_readings_statistics.png,Статистика вимірювань,"По 6995 показників на канал, JOIN та агрегати.",main
+04,docs/evidence/04_physical_range_validation.png,Фізичні межі температури,"Помилка P0001 для 120 °C, перевірка тригера.",main
+05,docs/evidence/05_unique_reading_timestamp.png,Унікальність вимірювань,Помилка 23505 для дубля channel_id/measured_at.,main
+06,docs/evidence/06_foreign_key_channel.png,Зовнішній ключ,Помилка 23503 для неіснуючого каналу 999999.,main
+07,docs/evidence/07_check_alert_rule_range.png,Обмеження CHECK,Помилка 23514 при min_value=35 та max_value=30.,main
+08,docs/evidence/08_empty_alert_history.png,Запит історії відхилень,Історія відхилень на момент перевірки порожня.,main
+09,docs/evidence/09_active_alert_rules.png,Налаштовані пороги,4 активних правила контролю.,main
+10,docs/evidence/10_alert_trigger_test_passed.png,Автоматичне створення тривоги,Перевірка створення відхилення з поверненням транзакції (ROLLBACK).,main
+11,docs/evidence/11_alert_acknowledge_and_resolve.png,Підтвердження та закриття тривоги,"Створення, підтвердження та закриття відхилення; ROLLBACK.",main
+12,docs/evidence/12_alert_rule_audit_rollback.png,Аудит змін і відкат,Аудит зміни температурного порогу 15 → 16 °C; ROLLBACK.,main
+13,docs/evidence/13_database_roles_permissions.png,Права ролей,"course_operator і course_analyst, GRANT-права.",main
+14,docs/evidence/14_rls_nine_tables.png,RLS таблиць,Увімкнений RLS для всіх 9 таблиць.,main
+15,docs/evidence/15_explain_distinct_on.png,EXPLAIN DISTINCT ON,"Execution Time 130.368 ms, shared hit=5360.",main
+16,docs/evidence/16_explain_lateral.png,EXPLAIN LATERAL,"Execution Time 0.180 ms, shared hit=13.",main
+17,docs/evidence/17_explain_24h_time_filter.png,EXPLAIN фільтрації за часом,"7169 рядків, Execution Time 6.058 ms.",main
+18,docs/evidence/18_aggregated_chart_history.png,Агрегована історія для графіків,"get_dashboard_history(24), по 125 точок на канал.",main
+19a,docs/evidence/19a_dashboard_charts_24h.png,Графіки 24 години,Чотири графіки за 24 години без верхніх карток.,main
+19b,docs/evidence/19b_dashboard_overview_7d.png,Загальний вигляд вебпанелі,"Картки, графіки та історія відхилень; вибрано 7 днів.",main
+20,docs/evidence/20_supabase_edge_functions.png,Список Edge Functions,"dashboard-data та ingest-readings, 0% помилок 5xx за годину на момент скриншота.",main
+21,docs/evidence/21_restored_database_readings.png,Рядки у відновленій БД,"environment_monitoring_restore, 34613 вимірювань.",main
+22,docs/evidence/22_restored_tables_views_triggers.png,Об’єкти відновленої БД,"9 таблиць, 2 представлення, 3 тригери.",main
+23,docs/evidence/23_restored_indexes_constraints_routines.png,"Індекси, обмеження, підпрограми","26 індексів, 45 обмежень, 6 функцій/процедур.",main
+24,docs/evidence/24_concurrency_session_a.png,Конкурентний доступ: сесія A,"BEGIN, UPDATE 1, транзакція відкрита.",main
+25,docs/evidence/25_concurrency_session_b_timeout.png,Конкурентний доступ: сесія B,Помилка тайм-ауту блокування.,main
+26a,docs/evidence/26a_esp8266_queued_readings.png,ESP8266 накопичує дані,Serial Monitor: вимірювання та зростання черги.,main
+26b,docs/evidence/26b_esp8266_successful_batch_sync.png,ESP8266 успішно синхронізує пакет,"6 captures, 24 readings, HTTP 200, remaining 0.",main
+—,docs/evidence/additional/10_preliminary_alert_test_without_notice.png,Додатковий скриншот,Додаткове виконання перевірки оброблення відхилень.,additional
+—,docs/evidence/additional/15_partial_explain_distinct_on.png,Додатковий скриншот,Додаткове зображення плану EXPLAIN DISTINCT ON.,additional
+—,docs/evidence/additional/dashboard_prior_24h.png,Додатковий скриншот,Попередній вигляд графіків 24 год.,additional
+—,docs/evidence/additional/dashboard_prior_6h.png,Додатковий скриншот,Попередній вигляд графіків 6 год.,additional
+—,docs/evidence/additional/dashboard_prior_7d.png,Додатковий скриншот,Попередній вигляд графіків 7 днів.,additional
+—,docs/evidence/additional/dashboard_prior_72h.png,Додатковий скриншот,Попередній вигляд графіків 72 год.,additional

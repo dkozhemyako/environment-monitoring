@@ -1,0 +1,47 @@
+﻿# Secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+**/secrets.h
+**/secrets.local.h
+**/credentials.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# Node.js / React / Vite
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+.vercel/
+*.tsbuildinfo
+
+# Supabase local files
+.supabase/
+
+# Local backups
+*.dump
+*.backup
+*.sql.gz
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
